@@ -494,7 +494,7 @@ def audio_podcast(req: AudioPodcastRequest):
 
     print("url==================",newurl)
     store_video_link(video_url=newurl,username=username,hosts=hosts,hasvid=hasvid,title=str(topic),topicCat=topicCat,summary=response.content,transcript=str(script),img_url=img_url)
-    return {"audio_url":'newurl'}
+    return {"audio_url":newurl}
 
 from sqlalchemy import select
 
@@ -520,3 +520,4 @@ def fetch_data(req: FecthInput):
 
 if __name__ == "__main__":
     uvicorn.run(app ,host="0.0.0.0", port=10000)
+
